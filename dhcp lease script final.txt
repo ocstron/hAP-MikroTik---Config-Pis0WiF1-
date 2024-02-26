@@ -1,0 +1,16 @@
+:local queueName "<client-$leaseActMAC>";
+:if (($leaseBound=1) && ($leaseActIP>="192.168.88.75")) do {
+    /queue simple add name=$queueName target=($leaseActIP . "/32") parent=LAN2 max-limit=128k/1M comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] host-name];
+}
+:if (($leaseBound=1) && ($leaseActIP>="192.168.88.64")) do {
+    /queue simple add name=$queueName target=($leaseActIP . "/32") parent=LAN2 max-limit=256k/2M comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] comment];
+}
+:if (($leaseBound=1) && ($leaseActIP>="192.168.88.50")) do {
+    /queue simple add name=$queueName target=($leaseActIP . "/32") parent=LAN1 max-limit=512k/3M comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] comment];
+}
+:if (($leaseBound=1) && ($leaseActIP>="192.168.88.32")) do {
+    /queue simple add name=$queueName target=($leaseActIP . "/32") parent=LAN1 max-limit=1M/5M comment=[/ip dhcp-server lease get [find where active-mac-address=$leaseActMAC && active-address=$leaseActIP] comment];
+}
+:if (($leaseBound=0) && ($leaseActIP>="192.168.88.32")) do {
+    /queue simple remove $queueName
+}

@@ -1,0 +1,21 @@
+Backup your current config before doing this if you need to revert.
+
+To apply the full config, you need to full reset your router. 
+Backup your current config if you need to.
+
+To apply the partial config, delete your simple queues, queue tree, and custom queue types.
+Paste dhcp lease script final inside the DHCP server script box.
+You need to create static ip address leases in order for script to work.
+So many things I can't fully explain, just apply the full script :D
+Backup your current config before doing this if you need to revert.
+
+
+  MMM      MMM       KKK                          TTTTTTTTTTT      KKK
+  MMMM    MMMM       KKK                          TTTTTTTTTTT      KKK
+  MMM MMMM MMM  III  KKK  KKK  RRRRRR     OOOOOO      TTT     III  KKK  KKK
+  MMM  MM  MMM  III  KKKKK     RRR  RRR  OOO  OOO     TTT     III  KKKKK
+  MMM      MMM  III  KKK KKK   RRRRRR    OOO  OOO     TTT     III  KKK KKK
+  MMM      MMM  III  KKK  KKK  RRR  RRR   OOOOOO      TTT     III  KKK  KKK
+
+###################################################################################
+https://www.ocstron.com
